@@ -1,0 +1,14 @@
+# Entorns virtuals
+.venv/
+env/
+
+# Arxius compilats de Python
+*.pyc
+__pycache__/
+
+# Arxius de variables d'entorn i secrets
+.env
+
+# Configuracions locals IDE
+.vscode/
+.idea/
