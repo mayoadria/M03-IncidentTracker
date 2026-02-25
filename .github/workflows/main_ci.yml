@@ -10,7 +10,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-
     steps:
     - name: Checkout del codi
       uses: actions/checkout@v4
@@ -20,10 +19,15 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Instal·lar Firefox i Geckodriver
+    - name: Instal·lar Firefox
       run: |
         sudo apt-get update
-        sudo apt-get install -y firefox geckodriver
+        sudo apt-get install -y firefox
+
+    - name: Instal·lar Geckodriver
+      uses: browser-actions/setup-geckodriver@latest
+      with:
+        geckodriver-version: 'latest'
 
     - name: Instal·lar dependències
       run: |
@@ -32,7 +36,6 @@ jobs:
 
     - name: Executar Tests
       env:
-        # Recuperem la clau secreta configurada a GitHub Secrets
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DEBUG: "False"
       run: |
