@@ -10,9 +10,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    services:
-      # Si el teu projecte necessita bases de dades externes com Postgres, 
-      # es configurarien aquí. Per defecte, Django usa SQLite.
 
     steps:
     - name: Checkout del codi
